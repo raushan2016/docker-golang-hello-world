@@ -3,14 +3,21 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
-	port := os.Getenv("PORT");
+
+	init := os.Getenv("INIT")
+	if init != "" {
+		fmt.Println("Hello world, init done!!!!!!")
+		return
+	}
+
+	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
@@ -20,7 +27,7 @@ func main() {
 
 	http.Handle("/", r)
 	fmt.Println("Starting up on " + port)
-	log.Fatal(http.ListenAndServe(":" + port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func hello(w http.ResponseWriter, req *http.Request) {
