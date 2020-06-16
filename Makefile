@@ -1,6 +1,6 @@
 NAME=hello-world-server
-TAGSERVER=raushan2016/helloworld-server
-TAGCONSOLE=raushan2016/helloworld-console
+TAGSERVER=raushan2016/helloworld-server:mm
+TAGCONSOLE=raushan2016/helloworld-console:mm
 VER=v1.0
 
 all: clean build

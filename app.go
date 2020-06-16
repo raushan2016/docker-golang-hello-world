@@ -49,6 +49,7 @@ func main() {
 			fmt.Println(err)
 		}
 		fmt.Println("Hello world, init done!!!!!!")
+		main1()
 		return
 	}
 
